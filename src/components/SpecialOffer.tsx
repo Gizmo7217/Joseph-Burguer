@@ -100,23 +100,27 @@ export const SpecialOffer: React.FC<SpecialOfferProps> = ({ onAddCombo }) => {
                   </h3>
                 </div>
 
-                {/* Vector graphics representation */}
-                <div className="h-44 rounded-xl bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 flex items-center justify-center p-4">
-                  <div className="flex items-center justify-center gap-2">
-                    {/* Burger */}
-                    <div className="w-24 h-24 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-xs text-center p-2">
-                      🍔 Burger Doble
-                    </div>
-                    <span className="text-zinc-600 font-black text-lg">+</span>
-                    {/* Fries */}
-                    <div className="w-20 h-20 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold text-xs text-center p-2">
-                      🍟 Papas Cheddar
-                    </div>
-                    <span className="text-zinc-600 font-black text-lg">+</span>
-                    {/* Soda */}
-                    <div className="w-16 h-16 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-bold text-xs text-center p-1">
-                      🥤 Gaseosa
-                    </div>
+                {/* Real imagery representation */}
+                <div className="relative h-48 rounded-xl overflow-hidden border border-zinc-800/80 grid grid-cols-2 gap-1.5 p-1 bg-zinc-900">
+                  <div className="relative rounded-lg overflow-hidden h-full">
+                    <img
+                      src="/img/burger-cheddar.jpg"
+                      alt="Burger Smash"
+                      className="w-full h-full object-cover"
+                    />
+                    <span className="absolute bottom-1.5 left-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded bg-zinc-950/80 text-amber-300">
+                      Burger Smash
+                    </span>
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden h-full">
+                    <img
+                      src="/img/papas-fritas.jpg"
+                      alt="Papas Rústicas"
+                      className="w-full h-full object-cover"
+                    />
+                    <span className="absolute bottom-1.5 left-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded bg-zinc-950/80 text-orange-300">
+                      Papas Cheddar
+                    </span>
                   </div>
                 </div>
 

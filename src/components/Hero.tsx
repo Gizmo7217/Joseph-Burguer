@@ -91,58 +91,31 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onOpenQuickOrder }) =
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md rounded-2xl bg-gradient-to-b from-zinc-800/90 to-zinc-900/90 p-1.5 shadow-2xl shadow-black/80 border border-zinc-700/60">
               <div className="rounded-xl overflow-hidden bg-zinc-950 p-6 space-y-6">
-                {/* Visual Dish Hero Preview */}
-                <div className="relative h-64 rounded-xl overflow-hidden bg-gradient-to-tr from-zinc-950 via-amber-950/40 to-zinc-900 border border-zinc-800 flex items-center justify-center">
-                  <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:12px_12px]" />
-                  
-                  {/* Stylized Burger Graphic */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <svg viewBox="0 0 160 140" className="w-48 h-44 drop-shadow-[0_20px_35px_rgba(0,0,0,0.8)]">
-                      <defs>
-                        <linearGradient id="heroBun" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#f59e0b" />
-                          <stop offset="50%" stopColor="#d97706" />
-                          <stop offset="100%" stopColor="#92400e" />
-                        </linearGradient>
-                        <linearGradient id="heroMeat" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#451a03" />
-                          <stop offset="100%" stopColor="#1e0c01" />
-                        </linearGradient>
-                        <linearGradient id="heroCheese" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#fef08a" />
-                          <stop offset="100%" stopColor="#f59e0b" />
-                        </linearGradient>
-                      </defs>
-                      {/* Brioche Top */}
-                      <path d="M 18 52 C 18 16, 142 16, 142 52 C 142 58, 18 58, 18 52 Z" fill="url(#heroBun)" />
-                      {/* Seeds */}
-                      <circle cx="45" cy="36" r="2" fill="#fef08a" opacity="0.9" />
-                      <circle cx="70" cy="28" r="2" fill="#fef08a" opacity="0.9" />
-                      <circle cx="95" cy="30" r="2" fill="#fef08a" opacity="0.9" />
-                      <circle cx="118" cy="42" r="2" fill="#fef08a" opacity="0.9" />
-                      <circle cx="82" cy="42" r="2" fill="#fef08a" opacity="0.9" />
-                      <circle cx="58" cy="45" r="2" fill="#fef08a" opacity="0.9" />
-                      {/* Lettuce */}
-                      <path d="M 14 56 Q 30 65, 46 56 Q 62 65, 78 56 Q 94 65, 110 56 Q 126 65, 146 56 L 142 60 Q 120 68, 104 61 Q 88 68, 72 61 Q 54 68, 36 61 Q 20 68, 14 60 Z" fill="#22c55e" />
-                      {/* Tomato */}
-                      <path d="M 22 62 C 22 59, 138 59, 138 62 C 138 67, 22 67, 22 62 Z" fill="#ef4444" />
-                      {/* Patty 1 */}
-                      <path d="M 16 68 C 16 65, 144 65, 144 68 C 146 77, 14 77, 16 68 Z" fill="url(#heroMeat)" />
-                      {/* Melting Cheddar */}
-                      <path d="M 20 74 L 38 88 L 54 75 L 82 92 L 102 75 L 128 89 L 140 74 Z" fill="url(#heroCheese)" />
-                      {/* Bacon */}
-                      <path d="M 22 76 Q 50 85, 80 77 Q 110 85, 138 76 L 135 80 Q 110 89, 80 81 Q 50 89, 20 80 Z" fill="#b91c1c" />
-                      {/* Patty 2 */}
-                      <path d="M 18 84 C 18 82, 142 82, 142 84 C 144 94, 16 94, 18 84 Z" fill="url(#heroMeat)" />
-                      {/* Bottom Brioche */}
-                      <path d="M 20 95 C 20 94, 140 94, 140 95 C 140 114, 20 114, 20 95 Z" fill="url(#heroBun)" />
-                    </svg>
+                {/* Visual Dish Hero Preview with Real Image */}
+                <div className="relative h-64 sm:h-72 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 flex items-center justify-center group">
+                  <img
+                    src="/img/burger-hero.jpg"
+                    alt="Joseph Burger Especial"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent pointer-events-none" />
+
+                  {/* Official Emblem Logo Badge */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-2 p-1.5 pr-3 rounded-full bg-zinc-950/90 border border-amber-500/30 backdrop-blur-md shadow-xl">
+                    <img
+                      src="/img/joseph-burger-logo.svg"
+                      alt="Joseph Burger Emblem"
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <span className="text-xs font-black text-amber-400 font-heading">
+                      Joseph Burger
+                    </span>
                   </div>
 
                   {/* Overlaid highlight tag */}
-                  <div className="absolute top-3 right-3 px-3 py-1 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-amber-500/30 text-amber-400 text-xs font-bold flex items-center gap-1.5">
-                    <Flame className="w-3.5 h-3.5 text-amber-500" />
-                    <span>Joseph Especial</span>
+                  <div className="absolute top-3 right-3 z-10 px-3 py-1 bg-amber-500 text-zinc-950 rounded-lg text-xs font-black flex items-center gap-1.5 shadow-lg">
+                    <Flame className="w-3.5 h-3.5 fill-current" />
+                    <span>Receta Insignia</span>
                   </div>
                 </div>
 

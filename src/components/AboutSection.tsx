@@ -11,8 +11,12 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="rounded-2xl bg-zinc-900 border border-zinc-800 p-8 space-y-6 shadow-2xl relative">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-zinc-950 shadow-lg shadow-orange-500/20">
-                  <Flame className="w-8 h-8 fill-current" />
+                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg shadow-amber-500/20 border border-amber-500/40">
+                  <img
+                    src="/img/joseph-burger-logo.svg"
+                    alt="Logo Oficial Joseph Burger"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div className="space-y-1">

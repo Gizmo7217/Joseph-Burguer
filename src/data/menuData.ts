@@ -1,7 +1,7 @@
 export interface MenuItem {
   id: string;
   name: string;
-  category: 'hamburguesas' | 'salchipapas' | 'desgranados' | 'perros' | 'entradas' | 'bebidas';
+  category: 'hamburguesas' | 'pizzas' | 'salchipapas' | 'desgranados' | 'perros' | 'entradas' | 'bebidas';
   categoryLabel: string;
   price: number;
   oldPrice?: number;
@@ -10,18 +10,19 @@ export interface MenuItem {
   rating: number;
   reviewsCount: number;
   prepTime: string;
+  image?: string;
   isPopular?: boolean;
   isNew?: boolean;
   isChefSpecial?: boolean;
   availableSauces?: string[];
   additions?: { id: string; name: string; price: number }[];
   tag?: string;
-  badgeColor?: string;
 }
 
 export const MENU_CATEGORIES = [
   { id: 'todas', label: 'Todo el Menú' },
   { id: 'hamburguesas', label: 'Hamburguesas' },
+  { id: 'pizzas', label: 'Pizzas Artesanales' },
   { id: 'salchipapas', label: 'Salchipapas' },
   { id: 'desgranados', label: 'Desgranados' },
   { id: 'perros', label: 'Perros Calientes' },
@@ -44,7 +45,7 @@ export const EXTRA_ADDITIONS = [
   { id: 'extra_patty', name: 'Carne Smash Adicional (130g)', price: 7000 },
   { id: 'extra_quail_egg', name: 'Huevos de Codorniz (3 und)', price: 2500 },
   { id: 'extra_fries', name: 'Porción Extra de Papas Francesas', price: 6000 },
-  { id: 'extra_onion_rings', name: 'Aros de Cebolla Crocantes (4 und)', price: 5000 },
+  { id: 'extra_pepperoni', name: 'Porción Extra de Pepperoni', price: 4500 },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -61,6 +62,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.9,
     reviewsCount: 184,
     prepTime: '15-20 min',
+    image: '/img/burger-hero.jpg',
     isPopular: true,
     isChefSpecial: true,
     tag: 'La Más Pedida',
@@ -77,6 +79,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 5.0,
     reviewsCount: 142,
     prepTime: '20 min',
+    image: '/img/burger-smash.jpg',
     isPopular: true,
     tag: 'Especial Alboraya',
   },
@@ -91,6 +94,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.8,
     reviewsCount: 96,
     prepTime: '12-15 min',
+    image: '/img/burger-cheddar.jpg',
   },
   {
     id: 'costena-criolla',
@@ -105,19 +109,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     tag: 'Sabor Costeño',
     prepTime: '15-18 min',
-  },
-  {
-    id: 'chicken-crispy-joseph',
-    name: 'Chicken Crispy Joseph',
-    category: 'hamburguesas',
-    categoryLabel: 'Hamburguesa de Pollo',
-    price: 26000,
-    description: 'Pechuga de pollo marinada extra crocante, queso suizo, ensaladita coleslaw y aderezo especial honey-mustard.',
-    longDescription: 'Filete grueso de pechuga de pollo marinado en suero costeño y especias por 24 horas, rebozado en cobertura extra crujiente, bañado con queso fundido, ensalada fresca coleslaw y salsa agridulce en pan brioche.',
-    rating: 4.7,
-    reviewsCount: 78,
-    prepTime: '15 min',
-    tag: 'Extra Crujiente',
+    image: '/img/burger-smash.jpg',
   },
   {
     id: 'bbq-bacon-crunch',
@@ -130,6 +122,53 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.8,
     reviewsCount: 85,
     prepTime: '15 min',
+    image: '/img/burger-hero.jpg',
+  },
+
+  // PIZZAS ARTESANALES (NUEVA CATEGORÍA SOLICITADA)
+  {
+    id: 'pizza-pepperoni-crunch',
+    name: 'Pizza Pepperoni Especial',
+    category: 'pizzas',
+    categoryLabel: 'Pizza Artesanal',
+    price: 31000,
+    oldPrice: 35000,
+    description: 'Masa madre horneada a la piedra, doble queso mozzarella fundido, pepperoni americano crujiente y orégano.',
+    longDescription: 'Nuestra pizza estrella horneada a alta temperatura para lograr bordes aireados y base crujiente. Salsa de tomate natural con especias italianas, generosa capa de queso mozzarella hilado y abundantes rodajas de pepperoni dorado y crujiente.',
+    rating: 4.9,
+    reviewsCount: 112,
+    prepTime: '18-20 min',
+    image: '/img/pizza-pepperoni.jpg',
+    isPopular: true,
+    tag: 'Horno de Piedra',
+  },
+  {
+    id: 'pizza-margherita-royale',
+    name: 'Pizza Margherita Royale',
+    category: 'pizzas',
+    categoryLabel: 'Pizza Artesanal',
+    price: 27000,
+    description: 'Tomates San Marzano, mozzarella fresco en hebras, albahaca fresca del huerto y aceite de oliva virgen extra.',
+    longDescription: 'La receta clásica tradicional con la frescura de ingredientes seleccionados. Masa artesanal delgada y crujiente, pomodoro aromático, abundante mozzarella derretido y hojas de albahaca fresca.',
+    rating: 4.8,
+    reviewsCount: 88,
+    prepTime: '15-18 min',
+    image: '/img/pizza-margherita.jpg',
+  },
+  {
+    id: 'pizza-joseph-carnes',
+    name: 'Pizza Joseph Cuatro Carnes',
+    category: 'pizzas',
+    categoryLabel: 'Pizza Especial',
+    price: 36000,
+    description: 'Carne smash picada, tocineta ahumada, pepperoni crocante, salchicha prémium y abundante mozzarella.',
+    longDescription: 'Para los que no se conforman con poco. Combina lo mejor de nuestra parrilla y el horno: carne de res desmenuzada, tocineta crujiente, rodajas de salchicha seleccionada y pepperoni sobre masa crocante.',
+    rating: 5.0,
+    reviewsCount: 95,
+    prepTime: '20 min',
+    image: '/img/pizza-pepperoni.jpg',
+    isChefSpecial: true,
+    tag: 'Full Carnes',
   },
 
   // SALCHIPAPAS
@@ -145,6 +184,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 5.0,
     reviewsCount: 220,
     prepTime: '18-22 min',
+    image: '/img/salchipapa.jpg',
     isPopular: true,
     tag: 'Para 2 Personas',
   },
@@ -159,19 +199,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.8,
     reviewsCount: 165,
     prepTime: '12-15 min',
-  },
-  {
-    id: 'salchipapa-mixta-gratinada',
-    name: 'Salchipapa Mixta Gratinada',
-    category: 'salchipapas',
-    categoryLabel: 'Salchipapa Gratinada',
-    price: 29000,
-    description: 'Papas, salchicha, pollo a la plancha, tocineta crujiente, maíz dulce y una manta de queso mozzarella gratinado.',
-    longDescription: 'Plato estrella con abundante queso fundido al calor directo de la salamandra. Incluye maíz tierno salteado a la mantequilla, pollo jugoso y trozos de tocineta crocante.',
-    rating: 4.9,
-    reviewsCount: 130,
-    prepTime: '18 min',
-    tag: 'Gratinada con Queso',
+    image: '/img/salchipapa.jpg',
   },
 
   // DESGRANADOS
@@ -187,20 +215,9 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.9,
     reviewsCount: 175,
     prepTime: '15-18 min',
+    image: '/img/desgranado.jpg',
     isPopular: true,
     tag: 'Auténtico Costeño',
-  },
-  {
-    id: 'desgranado-pollo-tocineta',
-    name: 'Desgranado Especial Pollo & Bacon',
-    category: 'desgranados',
-    categoryLabel: 'Desgranado Costeño',
-    price: 25000,
-    description: 'Maíz dulce en grano, pechuga desmechada a la plancha, tocineta dorada, queso mozzarella derretido y salsa tártara.',
-    longDescription: 'Para los que prefieren la suavidad del pollo con el toque salado y crocante de la tocineta ahumada. Servido bien caliente con queso fundido y salsa tártara especial.',
-    rating: 4.7,
-    reviewsCount: 88,
-    prepTime: '15 min',
   },
 
   // PERROS CALIENTES
@@ -215,6 +232,7 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.9,
     reviewsCount: 140,
     prepTime: '10-12 min',
+    image: '/img/perro-caliente.jpg',
     isPopular: true,
     tag: 'Con Huevo de Codorniz',
   },
@@ -229,32 +247,22 @@ export const MENU_ITEMS: MenuItem[] = [
     rating: 4.6,
     reviewsCount: 65,
     prepTime: '10 min',
+    image: '/img/perro-caliente.jpg',
   },
 
   // ENTRADAS & PAPAS
   {
     id: 'papas-rusticas-joseph',
-    name: 'Papas Rústicas Joseph con Cheddar & Bacon',
+    name: 'Papas Rústicas con Cheddar & Bacon',
     category: 'entradas',
     categoryLabel: 'Acompañamiento',
     price: 15000,
-    description: 'Porción generosa de papas en gajos rústicos con sazón de la casa, bañadas en salsa cheddar y tocineta crocante.',
-    longDescription: 'Papas en cascos con piel sazonadas con paprika y finas hierbas, fritas al punto perfecto de crocancia exterior y suavidad interior, cubiertas con salsa de queso cheddar fundido y tocineta picada.',
+    description: 'Porción generosa de papas fritas doradas sazonadas con páprika, cubiertas de salsa cheddar fundida y tocineta picada.',
+    longDescription: 'Papas fritas al punto perfecto de crocancia, cubiertas con salsa de queso cheddar caliente y tocineta picada crujiente.',
     rating: 4.8,
     reviewsCount: 92,
     prepTime: '10-12 min',
-  },
-  {
-    id: 'aros-cebolla-artesanales',
-    name: 'Aros de Cebolla Crocantes (8 und)',
-    category: 'entradas',
-    categoryLabel: 'Acompañamiento',
-    price: 13000,
-    description: 'Aros de cebolla fresca rebozados con panko crujiente, servidos con salsa tártara y salsa barbecue.',
-    longDescription: 'Aros de cebolla cortados a mano y rebozados en panko japonés para lograr la máxima textura crujiente.',
-    rating: 4.7,
-    reviewsCount: 54,
-    prepTime: '10 min',
+    image: '/img/papas-fritas.jpg',
   },
 
   // BEBIDAS
@@ -264,8 +272,8 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'bebidas',
     categoryLabel: 'Bebida Refrescante',
     price: 5000,
-    description: 'Coca-Cola, Kola Román, Cuatro, Sprite o Manzana Postobón.',
-    longDescription: 'Bebida gaseosa helada para acompañar tus hamburguesas y salchipapas favoritas.',
+    description: 'Coca-Cola, Kola Román, Cuatro, Sprite o Manzana Postobón heladas.',
+    longDescription: 'Bebida gaseosa helada para acompañar tus hamburguesas, pizzas y salchipapas favoritas.',
     rating: 4.9,
     reviewsCount: 310,
     prepTime: 'Inmediato',
@@ -282,35 +290,12 @@ export const MENU_ITEMS: MenuItem[] = [
     reviewsCount: 120,
     prepTime: 'Inmediato',
   },
-  {
-    id: 'jugo-natural-frutas',
-    name: 'Jugo Natural de Frutas en Agua o Leche',
-    category: 'bebidas',
-    categoryLabel: 'Bebida Natural',
-    price: 7500,
-    description: 'Maracuyá, Mango, Mora o Lulo recién preparados.',
-    longDescription: 'Preparado al instante con pulpa de fruta 100% natural y refrescante.',
-    rating: 4.8,
-    reviewsCount: 80,
-    prepTime: '5 min',
-  },
-  {
-    id: 'cerveza-nacional-fria',
-    name: 'Cerveza Club Colombia / Corona',
-    category: 'bebidas',
-    categoryLabel: 'Cerveza Fría',
-    price: 7000,
-    description: 'Club Colombia Dorada/Roja o Cerveza Corona fría.',
-    longDescription: 'Cerveza helada servida al instante.',
-    rating: 4.9,
-    reviewsCount: 94,
-    prepTime: 'Inmediato',
-  },
 ];
 
 export const BUSINESS_INFO = {
   name: 'Joseph Burger',
-  slogan: 'El verdadero sabor de la hamburguesa artesanal',
+  logoUrl: '/img/joseph-burger-logo.svg',
+  slogan: 'Hamburguesas, Salchipapas & Pizzas Artesanales',
   phone: '313 545 9315',
   phoneRaw: '3135459315',
   whatsappUrl: 'https://wa.me/573135459315',
@@ -327,7 +312,7 @@ export const TESTIMONIALS = [
     id: '1',
     name: 'Carlos Mendoza',
     neighborhood: 'Vecino de La Alboraya',
-    comment: '¡Las mejores hamburguesas de todo el sector! La carne tiene ese toque ahumado perfecto, el pan brioche es fresco y la salsa tártara de Joseph es otro nivel. El domicilio llegó caliente en 25 minutos.',
+    comment: '¡Las mejores hamburguesas y pizzas de todo el sector! La carne tiene ese toque ahumado perfecto, el pan brioche es fresco y la salsa tártara de Joseph es otro nivel. El domicilio llegó caliente en 25 minutos.',
     rating: 5,
     dish: 'Joseph Burger Especial',
   },
@@ -343,8 +328,8 @@ export const TESTIMONIALS = [
     id: '3',
     name: 'Javier Morales',
     neighborhood: 'Barrio La Alboraya',
-    comment: 'El desgranado mixto costeño me sorprendió por completo. Generoso en queso costeño y tocineta. Desde que abrieron en La Alboraya somos clientes fijos de cada fin de semana.',
+    comment: 'El desgranado mixto costeño me sorprendió por completo. Generoso en queso costeño y tocineta. Y las nuevas pizzas a la piedra están brutales. Recomendadísimo.',
     rating: 5,
-    dish: 'Desgranado Mixto',
+    dish: 'Desgranado Mixto & Pizza',
   },
 ];

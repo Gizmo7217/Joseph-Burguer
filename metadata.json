@@ -1,6 +1,6 @@
 {
   "name": "Joseph Burger",
-  "description": "Sitio web oficial de Joseph Burger en Barrio La Alboraya. Hamburguesas artesanales, salchipapas y comida rápida con pedidos directos a domicilio por WhatsApp al 313 545 9315.",
+  "description": "Sitio web oficial de Joseph Burger en Barrio La Alboraya. Hamburguesas artesanales, pizzas a la piedra, salchipapas y comida rápida con pedidos a domicilio por WhatsApp al 313 545 9315.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -76,7 +76,13 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
         {/* Header / Graphic banner */}
         <div className="relative">
-          <DishIllustration category={item.category} itemId={item.id} name={item.name} className="h-48 w-full" />
+          <DishIllustration
+            category={item.category}
+            itemId={item.id}
+            name={item.name}
+            imageSrc={item.image}
+            className="h-56 w-full"
+          />
         </div>
 
         {/* Scrollable details */}

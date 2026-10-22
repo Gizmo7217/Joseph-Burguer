@@ -186,11 +186,20 @@ ${itemsText}----------------------------------------
                     className="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-2.5"
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h4 className="text-sm font-bold text-white font-heading">{ci.item.name}</h4>
-                        <span className="text-xs text-amber-400 font-semibold tabular-nums">
-                          ${ci.totalPrice.toLocaleString('es-CO')} COP
-                        </span>
+                      <div className="flex items-start gap-3">
+                        {ci.item.image && (
+                          <img
+                            src={ci.item.image}
+                            alt={ci.item.name}
+                            className="w-12 h-12 rounded-lg object-cover shrink-0 border border-zinc-800"
+                          />
+                        )}
+                        <div>
+                          <h4 className="text-sm font-bold text-white font-heading">{ci.item.name}</h4>
+                          <span className="text-xs text-amber-400 font-semibold tabular-nums">
+                            ${ci.totalPrice.toLocaleString('es-CO')} COP
+                          </span>
+                        </div>
                       </div>
                       <button
                         onClick={() => onRemoveItem(ci.cartItemId)}

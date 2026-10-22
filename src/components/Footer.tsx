@@ -14,9 +14,11 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Bio */}
           <div className="lg:col-span-5 space-y-4">
             <a href="#inicio" className="flex items-center gap-2.5 text-xl font-black text-white font-heading">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-zinc-950">
-                <Flame className="w-5 h-5 fill-current" />
-              </div>
+              <img
+                src="/img/joseph-burger-logo.svg"
+                alt="Joseph Burger Logo"
+                className="w-9 h-9 rounded-full shadow-md shadow-amber-500/20"
+              />
               <span>
                 Joseph<span className="text-amber-500 ml-1">Burger</span>
               </span>

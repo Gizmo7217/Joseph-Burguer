@@ -51,14 +51,16 @@ export const Navbar: React.FC<NavbarProps> = ({ cartItemCount, onOpenCart }) => 
 
       {/* Main 3-Zone Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-18 flex items-center justify-between gap-8">
-        {/* Zone 1: Single text element wordmark */}
+        {/* Zone 1: Single text element wordmark with official logo */}
         <a
           href="#inicio"
           className="flex items-center gap-2.5 text-xl sm:text-2xl font-black tracking-tight text-white whitespace-nowrap shrink-0 group font-heading"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-zinc-950 shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
-            <Flame className="w-5 h-5 fill-current text-zinc-950" />
-          </div>
+          <img
+            src="/img/joseph-burger-logo.svg"
+            alt="Joseph Burger Logo"
+            className="w-10 h-10 rounded-full shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform"
+          />
           <span className="flex items-center">
             Joseph<span className="text-amber-500 ml-1.5">Burger</span>
           </span>

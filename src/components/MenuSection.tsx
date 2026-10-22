@@ -126,7 +126,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onSelectItem, onQuickA
                   <div>
                     {/* Visual Graphic Artwork */}
                     <div className="relative">
-                      <DishIllustration category={item.category} itemId={item.id} name={item.name} />
+                      <DishIllustration
+                        category={item.category}
+                        itemId={item.id}
+                        name={item.name}
+                        imageSrc={item.image}
+                      />
 
                       {/* Optional promo or special tag */}
                       {item.tag && (
